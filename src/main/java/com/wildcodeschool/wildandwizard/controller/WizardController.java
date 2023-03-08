@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.wildcodeschool.wildandwizard.repository.WizardDao; 
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class WizardController {
-
-    private WizardRepository repository = new WizardRepository();
+    
+    @Autowired
+    private WizardDao repository;
 
     @GetMapping("/wizards")
     public String getAll(Model model) {
